@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.8);
+            font-family: 'Poppins', sans-serif;
+            margin-left: 20px;
+        }
+
+        .main-header {
+            font-size: 2.8rem;
+            color: white;
+            border-bottom: 5px solid salmon;
+            display: inline-block;
+        }
+
+        .header {
+            word-wrap: break-word;
+            margin-top: 10vh;
+        }
+
+        p {
+            font-weight: bolder;
+            font-size: 2rem;
+            margin-top: 5rem;
+        }
+
+        input {
+            padding: 10px;
+            width: 60%;
+            font-size: 2rem;
+            background-color: white;
+            color: black
+        }
+
+        button {
+            margin: auto;
+            display: block;
+            margin-top: 5vh;
+            padding: 10px;
+            font-size: 1.5rem;
+            background: white;
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .clear {
+            padding: 3px;
+        }
+
+        .space {
+            margin-top: 30px;
+        }
+
+        @media screen and (max-width : 850px) {
+            input {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="main-header">Expense Calculation</h1>
+        <h1 class="header">Enter your expenses in the input form down below : </h1>
+    </header>
+    <section class="name-section">
+        <p class="name-p">Enter the name of expense</p>
+        <input type="text" class="name-input">
+    </section>
+    <section class='quantity-section'>
+        <p class="quantity-p">Enter the quantity you brought</p>
+        <input type="number" class="quantity-input">
+    </section>
+    <section class="price">
+        <p class="price-p">Enter the price</p>
+        <input type="number" class="price-input">
+    </section>
+    <div class="button">
+        <button id="btn" class="price-btn">SUBMIT</button>
+    </div>
+    <div class="btn3">
+        <button class="clear">Clear Output</button>
+    </div>
+</body>
+<script>
+    const nameInput = document.querySelector('.name-input')
+    const quantityInput = document.querySelector('.quantity-input')
+    const priceInput = document.querySelector('.price-input')
+    const btn = document.querySelector('#btn')
+    const btn2 = document.querySelector('.clear')
+
+    btn.addEventListener('click', function () {
+        const h2 = document.createElement('h1')
+        h2.textContent = `You spent ${ quantityInput.value * priceInput.value } on ${ nameInput.value }`
+        h2.classList.add('space')
+        document.body.appendChild(h2)
+        nameInput.value = ''
+        quantityInput.value = ''
+        priceInput.value = ''
+        btn2.addEventListener('click', function () {
+            h2.textContent = ''
+        })
+    })</script>
+
+</html>

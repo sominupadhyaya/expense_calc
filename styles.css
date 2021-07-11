@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(0 , 0, 0, 0.8);
+    font-family: 'Poppins', sans-serif;
+    margin-left: 20px;
+}
+.main-header{
+    font-size: 2.8rem;
+    color: white;
+    border-bottom: 5px solid salmon;
+    display: inline-block;
+}
+.header{
+    word-wrap: break-word;
+    margin-top: 10vh;
+}
+p{
+    font-weight: bolder;
+    font-size: 2rem;
+    margin-top: 5rem;
+}
+input{
+    padding: 10px;
+    width: 60%;
+    font-size: 2rem;
+    background-color: white;
+    color: black
+}
+button{
+    margin: auto;
+    display: block;
+    margin-top: 5vh;
+    padding: 10px;
+    font-size: 1.5rem;
+    background: white;
+}
+button:hover{
+    background-color: rgba(255 , 255 , 255 , 0.8);
+}
+.clear{
+    padding: 3px;
+}
+.space{
+    margin-top: 30px;
+}
+@media screen and (max-width : 850px) {
+    input{
+    width: 90%;
+}
+}
